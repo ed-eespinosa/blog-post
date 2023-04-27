@@ -9,27 +9,23 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
+import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import ErrorPage from "./error-page";
+import Home from "./pages/home/home";
+import theme from "./theme";
+import {ThemeProvider} from "@mui/material";
+import {router} from "./routes";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App/>,
-        errorElement: <ErrorPage />,
-    },
-]);
 root.render(
-  <React.StrictMode>
-      <RouterProvider router={router} />
-  </React.StrictMode>
+    <React.StrictMode>
+        <ThemeProvider theme={theme}>
+            <RouterProvider router={router}/>
+        </ThemeProvider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

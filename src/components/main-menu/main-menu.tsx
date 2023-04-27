@@ -1,15 +1,21 @@
 import React, {useState} from 'react';
 import {Box, Button, IconButton, Menu, MenuItem, Typography} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+import {useNavigate} from "react-router-dom";
 
 export default function MainMenu() {
     const pages = ['Home', 'About', 'Blog', 'Contact'];
+    const navigate = useNavigate();
+
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleCloseNavMenu = () => {
+    const handleCloseNavMenu = (page: string) => {
         setAnchorElNav(null);
+        if (page) {
+            navigate(`/${page.toLowerCase()}`)
+        }
     };
 
     return (<>
@@ -43,7 +49,7 @@ export default function MainMenu() {
                 }}
             >
                 {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
                         <Typography textAlign="center">{page}</Typography>
                     </MenuItem>
                 ))}
@@ -54,7 +60,7 @@ export default function MainMenu() {
             {pages.map((page) => (
                 <Button
                     key={page}
-                    onClick={handleCloseNavMenu}
+                    onClick={() => handleCloseNavMenu(page)}
                     sx={{my: 2, color: 'white', display: 'block'}}
                 >
                     {page}
