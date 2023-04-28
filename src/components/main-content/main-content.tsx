@@ -2,9 +2,7 @@ import React from 'react';
 import {Box, Grid, ImageList, ImageListItem} from "@mui/material";
 import styles from './main-content.module.scss'
 
-export type MainContentProps = {}
-
-export default function MainContent({}: MainContentProps) {
+export default function MainContent() {
 
     const itemData = [
         {
@@ -18,7 +16,8 @@ export default function MainContent({}: MainContentProps) {
         {
             img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
             title: 'Camera',
-        }]
+        }
+    ]
 
     return (<div className={styles.mainContent}>
         <Grid container spacing={2}>
