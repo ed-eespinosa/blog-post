@@ -11,11 +11,11 @@ export default function Blogs() {
         setOpen(false);
     };
 
-    return (<Container disableGutters>
+    return (<>
         <Box mt={3}>
             <Button variant='contained' startIcon={<Icon>add</Icon>} onClick={()=>setOpen(true)}> Create Post</Button>
             <PostList/>
             <PostForm open={open} handleClose={handleClose}/>
         </Box>
-    </Container>);
+    </>);
 }

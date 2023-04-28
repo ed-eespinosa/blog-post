@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Box, Button, Container, Grid, Typography} from "@mui/material";
+import {Box, Button, Grid, Typography} from "@mui/material";
 import {PostsService} from "../../services/posts";
 import {useLoaderData, useNavigate} from "react-router-dom";
 import {Post} from "../../posts/posts.interfaces";
@@ -26,12 +26,13 @@ export default function BlogsDetail() {
         if (!blogPost) {
             navigate('/blog')
         }
-    }, [])
+    }, [blogPost, navigate])
 
-    return (<Container>
+    return (<>
         <Box mt={3}>
             <Box mb={2}>
-                <Button variant='contained' startIcon={<Icon>edit</Icon>} onClick={() => setOpen(true)}> Edit Post</Button>
+                <Button variant='contained' startIcon={<Icon>edit</Icon>} onClick={() => setOpen(true)}> Edit
+                    Post</Button>
             </Box>
             <Grid container spacing={4}>
                 <Grid item xs={12}>
@@ -43,5 +44,5 @@ export default function BlogsDetail() {
             </Grid>
         </Box>
         <PostForm post={blogPost} open={open} handleClose={handleClose}/>
-    </Container>);
+    </>);
 }

@@ -6,6 +6,7 @@ import About from "./pages/about/about";
 import Blogs from "./pages/blogs/blogs";
 import BlogsDetail from "./pages/blogs-detail/blogs-detail";
 import {loader as blogLoader} from "./pages/blogs-detail/blogs-detail";
+import Contact from "./pages/contact/contact";
 
 export const router = createBrowserRouter([
     {
@@ -33,6 +34,11 @@ export const router = createBrowserRouter([
                 path: 'blog/:id',
                 element: <BlogsDetail/>,
                 loader: blogLoader
+            },
+            {
+                index: true,
+                path: 'contact',
+                element: <Contact/>
             }
         ]
     },

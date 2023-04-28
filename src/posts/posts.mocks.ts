@@ -1,5 +1,4 @@
 import {Post} from './posts.interfaces';
-import {uid} from 'uid';
 
 export const postsMocks: Post[] = [
     {

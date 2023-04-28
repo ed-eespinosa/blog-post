@@ -1,7 +1,6 @@
 import {Post} from "../posts/posts.interfaces";
 import {postsMocks} from "../posts/posts.mocks";
 
-
 export class PostsService {
     private static instance: PostsService;
     private readonly _posts: Post[];
