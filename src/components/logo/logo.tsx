@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 export default function Logo() {
     return (<div className={styles.logo}>
-        <Link to='/home'>
+        <Link to='/'>
             <img src='https://picsum.photos/100/50' alt='logo'/>
         </Link>
     </div>);

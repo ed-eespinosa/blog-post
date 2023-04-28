@@ -13,8 +13,10 @@ export default function MainMenu() {
     };
     const handleCloseNavMenu = (page: string) => {
         setAnchorElNav(null);
-        if (page) {
+        if (page && page !== 'Home') {
             navigate(`/${page.toLowerCase()}`)
+        } else {
+            navigate('/')
         }
     };
 

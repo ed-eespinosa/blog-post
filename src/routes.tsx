@@ -16,27 +16,23 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                path: 'home',
+                path: '',
                 element: <Home/>
             },
             {
-                index: true,
                 path: 'about',
                 element: <About/>
             },
             {
-                index: true,
                 path: 'blog',
                 element: <Blogs/>
             },
             {
-                index: true,
                 path: 'blog/:id',
                 element: <BlogsDetail/>,
                 loader: blogLoader
             },
             {
-                index: true,
                 path: 'contact',
                 element: <Contact/>
             }
