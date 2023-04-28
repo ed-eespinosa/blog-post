@@ -32,7 +32,7 @@ export default function MainContent() {
                     labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
                     dolores. </p>
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/eGE-tFalwpA"
+                <iframe src="https://www.youtube.com/embed/eGE-tFalwpA"
                         title="YouTube video player" frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen></iframe>
